@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Va te faire cuire un oeuf !</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Va te faire<br>cuire un oeuf !</h1>
+    <button id="add-button" class="btn btn-success">Ajouter un timer</button>
+    <div class="container">
+        <div class="row clocks justify-content-center">
+            <div class="col-12 col-md-6 col-xl-4 clock base">
+                <div class="main-container">
+
+                    <div class="horloge-ana">
+                        <div class="hand"></div>
+                    </div>
+
+                    <div class="horloge">00:00</div>
+
+                    <div class="container-minuteur">
+                        <form action="javascript:void(0)" class="container">
+                            <div class="form-group">
+                                <button data-time="3" class="fixed-time btn btn-light">Oeuf à la coque</button>
+                            </div>
+
+                            <div class="form-group">
+                                <button data-time="6" class="fixed-time btn btn-light">Oeuf mollet</button>
+                            </div>
+
+                            <div class="form-group">
+
+                                <button data-time="9" class="fixed-time btn btn-light">Oeuf dur</button>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="number" min="1" value="1" class="input-time form-control form-control-lg">
+                            </div>
+
+                            <div class="form-group">
+                                <button class="input-button btn btn-light">Temps personnalisé</button>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <button class="btn btn-success play" data-control="play">Lancer</button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-warning pause" data-control="pause">Pause</button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-danger restart" data-control="restart">Redémarrer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio src="sounds/tictac_cut.mp3" id="tictac"></audio>
+    <audio src="sounds/alarm.mp3" id="alarm"></audio>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="classes/Horloge.js"></script>
+    <script src="classes/Main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', onDOMLoaded);
+
+        function onDOMLoaded(e) {
+            let main = new Main();
+        }
+    </script>
+</body>
+
+</html>
